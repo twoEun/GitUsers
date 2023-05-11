@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_graph"
+    app:startDestination="@id/user_list_fragment">
+
+    <fragment
+        android:id="@+id/user_list_fragment"
+        android:name="com.kkc.githubusers.view.userList.UserListFragment"
+        android:label="UserListFragment"
+        tools:layout="@layout/fragment_user_list">
+
+        <action
+            android:id="@+id/go_detail"
+            app:destination="@id/user_detail"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/user_detail"
+        android:name="com.kkc.githubusers.view.userDetail.UserDetailFragment"
+        android:label="UserDetailFragment"
+        tools:layout="@layout/fragment_user_detail">
+
+        <argument
+            android:name="search_item"
+            app:argType="com.kkc.usecase.entity.SearchItem"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>
